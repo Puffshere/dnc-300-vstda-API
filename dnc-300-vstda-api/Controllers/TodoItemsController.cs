@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Linq;
+﻿using dnc_300_vstda_api.Models;
+using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
-using dnc_300_vstda_api.Models;
 
 namespace dnc_300_vstda_api.Controllers
 {
@@ -11,37 +10,31 @@ namespace dnc_300_vstda_api.Controllers
         // GET: TodoItems
         public ActionResult Index()
         {
-            ArrayList todoArrList = new ArrayList();
-            todoArrList.Add(
+            List<Todos> completeList = new List<Todos>()
+            {
                 new Todos
                 {
                     todoItemId = 0,
                     name = "an item",
                     priority = 3,
                     completed = false
-                });
-            todoArrList.Add(
+                },
                 new Todos
                 {
                     todoItemId = 1,
                     name = "another item",
                     priority = 2,
                     completed = false
-                });
-            todoArrList.Add(
+                },
                 new Todos
                 {
                     todoItemId = 2,
                     name = "a done item",
                     priority = 1,
                     completed = true
-                });
-            var list = from Todos todos in todoArrList
-                       where todos.todoItemId == 0
-                       select todos;
-            foreach (Todos t in list)
-                ViewBag.TodoList = t.name;
-            return View();
+                },
+            };
+            return View(completeList);
             {
                 throw new NotImplementedException();
             }

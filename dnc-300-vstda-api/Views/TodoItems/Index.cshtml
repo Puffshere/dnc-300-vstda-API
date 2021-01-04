@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<dnc_300_vstda_api.Models.Todos>
+
+@{
     ViewBag.Title = "Index";
 }
 
@@ -10,8 +12,10 @@
 
 <body>
     <h1>Welcome to your Todo List!</h1>
-    <div>
-        @ViewBag.TodoList
-    </div>
+
+    @foreach (var t in Model)
+    {
+        <p>@t.name</p>
+    }
 </body>
 </html>
