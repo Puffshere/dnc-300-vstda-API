@@ -9,37 +9,36 @@ namespace dnc_300_vstda_api.Controllers
     public class TodoItemsController : Controller
     {
         // GET: TodoItems
-        public ActionResult Index(string i)
+        public ActionResult Index()
         {
-            i = "hello worlds";
-
             ArrayList todoArrList = new ArrayList();
             todoArrList.Add(
                 new Todos
                 {
                     todoItemId = 0,
-                    name = "Omelchenko",
-                    priority = 3
+                    name = "an item",
+                    priority = 3,
+                    completed = false
                 });
             todoArrList.Add(
                 new Todos
                 {
                     todoItemId = 1,
-                    name = "O’Donnell",
-                    priority = 2
+                    name = "another item",
+                    priority = 2,
+                    completed = false
                 });
             todoArrList.Add(
                 new Todos
                 {
                     todoItemId = 2,
-                    name = "Mortensen",
-                    priority = 1
+                    name = "a done item",
+                    priority = 1,
+                    completed = true
                 });
-
             var list = from Todos todos in todoArrList
                        where todos.todoItemId == 0
                        select todos;
-
             foreach (Todos t in list)
                 ViewBag.TodoList = t.name;
             return View();
