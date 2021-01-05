@@ -5,36 +5,16 @@ using System.Web.Mvc;
 
 namespace dnc_300_vstda_api.Controllers
 {
-    public class TodoItemsController : Controller
+    public class TodosController : Controller
     {
         // GET: TodoItems
         public ActionResult Index()
         {
-            List<Todos> completeList = new List<Todos>()
-            {
-                new Todos
-                {
-                    todoItemId = 0,
-                    name = "an item",
-                    priority = 3,
-                    completed = false
-                },
-                new Todos
-                {
-                    todoItemId = 1,
-                    name = "another item",
-                    priority = 2,
-                    completed = false
-                },
-                new Todos
-                {
-                    todoItemId = 2,
-                    name = "a done item",
-                    priority = 1,
-                    completed = true
-                },
-            };
-            return View(completeList);
+            List<Todo> mockTodos = new List<Todo>();
+            mockTodos.Add(new Todo(0, "an item", 3, false));
+            mockTodos.Add(new Todo(1, "another item", 2, false));
+            mockTodos.Add(new Todo(2, "a done item", 1, true));
+            return View(mockTodos);
             {
                 throw new NotImplementedException();
             }
@@ -47,7 +27,7 @@ namespace dnc_300_vstda_api.Controllers
         }
 
         // GET: TodoItems/Create
-        public ActionResult Create()
+        public ActionResult Create(int todoItemId, string name, int priority, bool completed)
         {
             return View();
         }

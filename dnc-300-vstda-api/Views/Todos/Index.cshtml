@@ -1,4 +1,4 @@
-﻿@model List<dnc_300_vstda_api.Models.Todos>
+﻿@model List<dnc_300_vstda_api.Models.Todo>
 
 @{
     ViewBag.Title = "Index";
@@ -9,13 +9,11 @@
     <meta name="viewport" content="width = device-width" />
     <title>TodoList</title>
 </head>
-
 <body>
     <h1>Welcome to your Todo List!</h1>
-
     @foreach (var t in Model)
     {
-        <p>@t.name</p>
+        <p>@t.Name</p>
     }
 </body>
 </html>
