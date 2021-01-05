@@ -16,7 +16,7 @@ namespace dnc_300_vstda_api
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Todos", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Todos", action = "TodoItems", id = UrlParameter.Optional }
             );
         }
     }

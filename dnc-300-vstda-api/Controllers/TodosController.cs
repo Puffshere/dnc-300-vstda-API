@@ -8,7 +8,7 @@ namespace dnc_300_vstda_api.Controllers
     public class TodosController : Controller
     {
         // GET: TodoItems
-        public ActionResult Index()
+        public ActionResult TodoItems()
         {
             List<Todo> mockTodos = new List<Todo>();
             mockTodos.Add(new Todo(0, "an item", 3, false));
