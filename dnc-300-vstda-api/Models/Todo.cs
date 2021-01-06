@@ -1,4 +1,6 @@
-﻿namespace dnc_300_vstda_api.Models
+﻿using System;
+
+namespace dnc_300_vstda_api.Models
 {
     public class Todo
     {
