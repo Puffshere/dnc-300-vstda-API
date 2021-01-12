@@ -12,7 +12,7 @@ namespace dnc_300_vstda_api.Controllers.Tests
     [TestClass()]
     public class TodosControllerTests
     {
-        TodosController tc = new TodosController();
+        TodoItemsController tc = new TodoItemsController();
         List<Todo> mockTodos = new List<Todo>()
         {
             new Todo(0, "an item", 3, false),
