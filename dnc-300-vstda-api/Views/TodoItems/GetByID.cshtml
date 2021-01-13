@@ -1,0 +1,23 @@
+﻿@model List<dnc_300_vstda_api.Models.Todo>
+
+@{
+    ViewBag.Title = "GetByID";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width = device-width" />
+    <title>TodoList</title>
+</head>
+<body>
+    <h1>This is the item that you requested.</h1>
+    @foreach (var t in Model)
+    {
+        if (t.TodoItemId == 1)
+        {
+            <p>@t.Name</p>
+            break;
+        }
+    }
+</body>
+</html>

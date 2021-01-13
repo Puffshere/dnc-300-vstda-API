@@ -1,6 +1,7 @@
 ﻿using dnc_300_vstda_api.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace dnc_300_vstda_api.Controllers
@@ -22,11 +23,14 @@ namespace dnc_300_vstda_api.Controllers
             return View(mockTodos);
         }
 
-        //public ActionResult GetByID()
-        //{
-        //    Todo todo = tc.Get(1);
-        //    return View(todo);
-        //}
+        public ActionResult GetByID()
+        {
+            //Todo todo = tc.Get(1);
+            //Todo result = mockTodos.Find(x => x.GetByID() == "xy");
+            //return mockTodos.FirstOrDefault(Todo => Todo.TodoItemId == x);
+            //Todo result = mockTodos.Find(x => x.TodoItemId == 1);
+            return View(mockTodos);
+        }
 
         //public ActionResult Post()
         //{
